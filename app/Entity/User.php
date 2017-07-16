@@ -34,8 +34,6 @@ class User extends Model
 
     /**
      * Get the cars for the user.
-     *
-     * @return [type] [description]
      */
     public function cars()
     {
