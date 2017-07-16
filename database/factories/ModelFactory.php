@@ -11,7 +11,7 @@
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var \Illuminate\Database\Eloquent\Factory $factory  */
 $factory->define(App\Entity\User::class, function (Faker\Generator $faker) {
     return [
         'first_name' => $faker->firstName,
