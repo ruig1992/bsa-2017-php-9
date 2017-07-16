@@ -55,7 +55,10 @@ class UserManager implements UserManagerContract
      */
     public function deleteUser(int $userId): void
     {
-        $user = User::find($userId);
+        $user = $this->findById($userId);
+        if ($user === null) {
+            return;
+        }
         $user->delete();
     }
 }
