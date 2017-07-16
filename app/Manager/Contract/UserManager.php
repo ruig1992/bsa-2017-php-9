@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Manager\Contract;
 
-
-use App\Request\Contract\SaveUserRequest;
 use App\Entity\User;
 use Illuminate\Support\Collection;
+use App\Request\Contract\SaveUserRequest;
 
+/**
+ * Interface UserManager
+ * @package App\Manager\Contract
+ */
 interface UserManager
 {
     /**
@@ -22,7 +24,7 @@ interface UserManager
      * @param int $id
      * @return User|null
      */
-    public function findById(int $id);
+    public function findById(int $id): ?User;
 
     /**
      * Find Users that has is_active flag true
@@ -35,9 +37,9 @@ interface UserManager
      * Create or Update User
      *
      * @param SaveUserRequest $request
-     * @return User
+     * @return User|null
      */
-    public function saveUser(SaveUserRequest $request): User;
+    public function saveUser(SaveUserRequest $request): ?User;
 
     /**
      * Delete User By ID
@@ -45,5 +47,5 @@ interface UserManager
      * @param int $userId
      * @return void
      */
-    public function deleteUser(int $userId);
+    public function deleteUser(int $userId): void;
 }

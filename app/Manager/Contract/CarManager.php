@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Manager\Contract;
 
-
 use App\Entity\Car;
-use App\Request\Contract\SaveCarRequest;
 use Illuminate\Support\Collection;
+use App\Request\Contract\SaveCarRequest;
 
+/**
+ * Interface CarManager
+ * @package App\Manager\Contract
+ */
 interface CarManager
 {
     /**
@@ -22,7 +24,7 @@ interface CarManager
      * @param int $id
      * @return Car|null
      */
-    public function findById(int $id);
+    public function findById(int $id): ?Car;
 
     /**
      * Find Cars that belongs only to active users
@@ -35,9 +37,9 @@ interface CarManager
      * Create or Update Car
      *
      * @param SaveCarRequest $request
-     * @return Car
+     * @return Car|null
      */
-    public function saveCar(SaveCarRequest $request): Car;
+    public function saveCar(SaveCarRequest $request): ?Car;
 
     /**
      * Delete Car by ID
@@ -45,5 +47,5 @@ interface CarManager
      * @param int $carId
      * @return void
      */
-    public function deleteCar(int $carId);
+    public function deleteCar(int $carId): void;
 }
