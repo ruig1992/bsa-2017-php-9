@@ -1,9 +1,12 @@
 <?php
-
 namespace App\Request\Contract;
 
 use App\Entity\User;
 
+/**
+ * Interface SaveUserRequest
+ * @package App\Request\Contract
+ */
 interface SaveUserRequest
 {
     /**
