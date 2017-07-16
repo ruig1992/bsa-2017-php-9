@@ -24,6 +24,15 @@ class User extends Model
     protected $fillable = ['first_name', 'last_name', 'is_active'];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
+
+    /**
      * Get the cars for the user.
      *
      * @return [type] [description]
